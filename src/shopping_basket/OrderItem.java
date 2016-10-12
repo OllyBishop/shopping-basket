@@ -1,6 +1,8 @@
 package shopping_basket;
 
 public class OrderItem {
+	
+	// Testing 2
 
 	private String productName;
 	private float latestPrice;
@@ -11,7 +13,7 @@ public class OrderItem {
 	}
 
 	public OrderItem(String productName, float latestPrice, int quantity) {
-		this.productName = productName;
+		this.productName = productName.substring(0, Math.min(productName.length(), 20));
 		this.latestPrice = latestPrice;
 		this.quantity = quantity;
 	}
