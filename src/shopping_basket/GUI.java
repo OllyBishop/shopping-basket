@@ -31,12 +31,14 @@ import com.eteks.sweethome3d.swing.NullableSpinner;
 import com.eteks.sweethome3d.swing.NullableSpinner.NullableSpinnerNumberModel;
 
 public class GUI {
+	
+	// Test
 
 	ShoppingBasket shoppingBasket = new ShoppingBasket();
 
 	boolean controlPressed;
 
-	Font defaultFont = new Font("Arial", Font.PLAIN, 12);
+	Font monospacedFont = new Font("Andale Mono", Font.PLAIN, 13);
 
 	JFrame frame;
 
@@ -75,73 +77,64 @@ public class GUI {
 	private void initialize() {
 
 		frame = new JFrame();
-		frame.setBounds(100, 100, 512, 384);
+		frame.setBounds(100, 100, 560, 420);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
+		frame.setTitle("Shopping Basket");
 		frame.getContentPane().setLayout(null);
 
 		model = new DefaultListModel<String>();
 		JList<String> list = new JList<String>(model);
-		list.setBounds(12, 82, 392, 240);
-		list.setFont(new Font("Courier", Font.PLAIN, 12));
+		list.setBounds(12, 84, 432, 272);
+		list.setFont(monospacedFont);
 		frame.getContentPane().add(list);
 
 		JLabel labelProductName = new JLabel("Product Name");
-		labelProductName.setBounds(12, 8, 78, 14);
-		labelProductName.setFont(defaultFont);
+		labelProductName.setBounds(12, 8, 88, 16);
 		frame.getContentPane().add(labelProductName);
 
 		JLabel labelLatestPrice = new JLabel("Latest Price");
-		labelLatestPrice.setBounds(208, 8, 64, 14);
-		labelLatestPrice.setFont(defaultFont);
+		labelLatestPrice.setBounds(232, 8, 72, 16);
 		frame.getContentPane().add(labelLatestPrice);
 
 		JLabel labelQuantity = new JLabel("Quantity");
-		labelQuantity.setBounds(308, 8, 45, 14);
-		labelQuantity.setFont(defaultFont);
+		labelQuantity.setBounds(340, 8, 54, 16);
 		frame.getContentPane().add(labelQuantity);
 
 		JLabel labelBasket = new JLabel("Basket");
-		labelBasket.setBounds(12, 64, 37, 14);
-		labelBasket.setFont(defaultFont);
+		labelBasket.setBounds(12, 64, 41, 16);
 		frame.getContentPane().add(labelBasket);
 
 		JLabel labelNoItems = new JLabel("No. Items");
-		labelNoItems.setBounds(12, 334, 51, 14);
-		labelNoItems.setFont(defaultFont);
+		labelNoItems.setBounds(12, 368, 61, 16);
 		frame.getContentPane().add(labelNoItems);
 
 		JLabel labelTotal = new JLabel("Total");
-		labelTotal.setBounds(272, 334, 27, 14);
-		labelTotal.setFont(defaultFont);
+		labelTotal.setBounds(304, 368, 32, 16);
 		frame.getContentPane().add(labelTotal);
 
 		JTextField fieldProductName = new JTextField();
-		fieldProductName.setBounds(12, 26, 192, 26);
-		fieldProductName.setFont(defaultFont);
+		fieldProductName.setBounds(12, 28, 216, 24);
 		frame.getContentPane().add(fieldProductName);
 
 		JTextField fieldLatestPrice = new JTextField();
-		fieldLatestPrice.setBounds(208, 26, 96, 26);
-		fieldLatestPrice.setFont(defaultFont);
+		fieldLatestPrice.setBounds(232, 28, 104, 24);
 		frame.getContentPane().add(fieldLatestPrice);
 
 		NullableSpinnerNumberModel fieldQuantityNumberModel = new NullableSpinnerNumberModel(0, 0, 0, 1);
 		fieldQuantityNumberModel.setMaximum(null);
 		NullableSpinner fieldQuantity = new NullableSpinner(fieldQuantityNumberModel);
-		fieldQuantity.setBounds(308, 26, 96, 26);
+		fieldQuantity.setBounds(340, 28, 104, 24);
 		frame.getContentPane().add(fieldQuantity);
 
 		fieldNoItems = new JTextField();
-		fieldNoItems.setBounds(72, 328, 96, 26);
+		fieldNoItems.setBounds(77, 364, 104, 24);
 		fieldNoItems.setEditable(false);
-		fieldNoItems.setFont(defaultFont);
 		frame.getContentPane().add(fieldNoItems);
 
 		fieldTotal = new JTextField();
-		fieldTotal.setBounds(308, 328, 96, 26);
+		fieldTotal.setBounds(340, 364, 104, 24);
 		fieldTotal.setEditable(false);
-		fieldTotal.setFont(defaultFont);
 		frame.getContentPane().add(fieldTotal);
 
 		JButton buttonAdd = new JButton("Add");
@@ -174,8 +167,7 @@ public class GUI {
 				}
 			}
 		});
-		buttonAdd.setBounds(410, 26, 96, 26);
-		buttonAdd.setFont(defaultFont);
+		buttonAdd.setBounds(450, 28, 104, 24);
 		frame.getContentPane().add(buttonAdd);
 
 		JButton buttonRemove = new JButton("Remove");
@@ -202,8 +194,7 @@ public class GUI {
 				}
 			}
 		});
-		buttonRemove.setBounds(410, 82, 96, 26);
-		buttonRemove.setFont(defaultFont);
+		buttonRemove.setBounds(450, 84, 104, 24);
 		frame.getContentPane().add(buttonRemove);
 
 		JButton buttonEdit = new JButton("Edit");
@@ -244,8 +235,7 @@ public class GUI {
 
 			}
 		});
-		buttonEdit.setBounds(410, 120, 96, 26);
-		buttonEdit.setFont(defaultFont);
+		buttonEdit.setBounds(450, 124, 104, 24);
 		frame.getContentPane().add(buttonEdit);
 
 		JButton buttonClearBasket = new JButton("Clear Basket");
@@ -255,8 +245,7 @@ public class GUI {
 				updateGUI();
 			}
 		});
-		buttonClearBasket.setBounds(410, 158, 96, 26);
-		buttonClearBasket.setFont(defaultFont);
+		buttonClearBasket.setBounds(450, 164, 104, 24);
 		frame.getContentPane().add(buttonClearBasket);
 
 		JButton buttonSave = new JButton("Save");
@@ -277,8 +266,7 @@ public class GUI {
 				}
 			}
 		});
-		buttonSave.setBounds(410, 196, 96, 26);
-		buttonSave.setFont(defaultFont);
+		buttonSave.setBounds(450, 204, 104, 24);
 		frame.getContentPane().add(buttonSave);
 
 		JButton buttonExit = new JButton("Exit");
@@ -287,30 +275,38 @@ public class GUI {
 				System.exit(0);
 			}
 		});
-		buttonExit.setBounds(410, 330, 96, 26);
-		buttonExit.setFont(defaultFont);
+		buttonExit.setBounds(450, 364, 104, 24);
 		frame.getContentPane().add(buttonExit);
 
 		Image image = null;
-		int size = 40;
+		int imageSize = 40;
 		try {
 			image = ImageIO.read(new File("img/Information.svg.png"));
 		} catch (IOException iOE) {
 			iOE.printStackTrace();
 		}
-		JLabel label = new JLabel("", new ImageIcon(image.getScaledInstance(size, size, Image.SCALE_SMOOTH)),
+		JLabel label = new JLabel("", new ImageIcon(image.getScaledInstance(imageSize, imageSize, Image.SCALE_SMOOTH)),
 				JLabel.CENTER);
 		label.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent mE) {
-				JOptionPane.showMessageDialog(frame, "message", "Info", JOptionPane.INFORMATION_MESSAGE);
+				JLabel[] message = { new JLabel("Shortcut keys:"), new JLabel("Ctrl-A     Add"),
+						new JLabel("Ctrl-R     Remove"), new JLabel("Ctrl-E     Edit"),
+						new JLabel("Ctrl-C     Clear Basket"), new JLabel("Ctrl-S     Save"),
+						new JLabel("Ctrl-Esc   Exit") };
+				for (JLabel label : message) {
+					if (label.getText().startsWith("Ctrl-")) {
+						label.setFont(monospacedFont);
+					}
+				}
+				JOptionPane.showMessageDialog(frame, message, "Info", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		JPanel panel = new JPanel(new BorderLayout());
 		panel.add(label, BorderLayout.CENTER);
 		int buttonSaveLowerY = buttonSave.getY() + buttonSave.getHeight();
 		int buttonExitUpperY = buttonExit.getY();
-		panel.setBounds(buttonSave.getX() + (buttonSave.getWidth() / 2) - (size / 2),
-				buttonSaveLowerY + ((buttonExitUpperY - buttonSaveLowerY) / 2) - (size / 2), size, size);
+		panel.setBounds(buttonSave.getX() + (buttonSave.getWidth() / 2) - (imageSize / 2),
+				buttonSaveLowerY + ((buttonExitUpperY - buttonSaveLowerY) / 2) - (imageSize / 2), imageSize, imageSize);
 		frame.getContentPane().add(panel);
 
 		KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(new KeyEventDispatcher() {
