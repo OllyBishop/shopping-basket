@@ -1,6 +1,8 @@
 package shopping_basket;
 
 public class OrderItem {
+	
+	// Testing 2
 
 	private String productName;
 	private float latestPrice;

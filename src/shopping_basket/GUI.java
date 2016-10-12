@@ -32,7 +32,7 @@ import com.eteks.sweethome3d.swing.NullableSpinner.NullableSpinnerNumberModel;
 
 public class GUI {
 	
-	// Test
+	// Testing 1
 
 	ShoppingBasket shoppingBasket = new ShoppingBasket();
 
