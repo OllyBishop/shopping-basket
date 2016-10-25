@@ -2,6 +2,8 @@ package shopping_basket;
 
 import static org.junit.Assert.*;
 
+import java.io.FileNotFoundException;
+
 import org.junit.Test;
 
 public class ShoppingBasketTest {
@@ -267,6 +269,24 @@ public class ShoppingBasketTest {
 		assertEquals(1, shoppingBasket.getNumberOfProducts());
 		assertEquals(quantity - removeQuantity, shoppingBasket.getNumberOfItems());
 		assertEquals((quantity - removeQuantity) * latestPrice, shoppingBasket.getBasketTotal(), 0);
+	}
+
+	@Test
+	public void saveBasketValidFileName() {
+		try {
+			shoppingBasket.saveBasket("test");
+		} catch (FileNotFoundException e) {
+			fail();
+		}
+	}
+
+	@Test
+	public void saveBasketInvalidFileName() {
+		try {
+			shoppingBasket.saveBasket("/");
+			fail();
+		} catch (FileNotFoundException e) {
+		}
 	}
 
 }

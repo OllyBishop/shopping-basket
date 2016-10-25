@@ -11,9 +11,9 @@ public class OrderItem {
 	}
 
 	public OrderItem(String productName, float latestPrice, int quantity) {
-		this.productName = productName.substring(0, Math.min(productName.length(), 20));
-		this.latestPrice = latestPrice;
-		this.quantity = quantity;
+		setProductName(productName);
+		setLatestPrice(latestPrice);
+		setQuantity(quantity);
 	}
 
 	public String getProductName() {
@@ -21,7 +21,7 @@ public class OrderItem {
 	}
 
 	public void setProductName(String productName) {
-		this.productName = productName;
+		this.productName = productName.substring(0, Math.min(productName.length(), 20));
 	}
 
 	public float getLatestPrice() {
@@ -29,7 +29,7 @@ public class OrderItem {
 	}
 
 	public void setLatestPrice(float latestPrice) {
-		this.latestPrice = latestPrice;
+		this.latestPrice = ((float) ((int) (latestPrice * 100))) / 100;
 	}
 
 	public int getQuantity() {
