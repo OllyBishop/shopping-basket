@@ -259,7 +259,6 @@ public class GUI {
 				} else {
 					JOptionPane.showMessageDialog(frame, "You may only edit one product at a time.");
 				}
-
 			}
 		});
 		buttonEdit.setBounds(450, 124, 104, 24);
