@@ -190,7 +190,7 @@ public class GUI {
 
 		JButton buttonRemove = new JButton("Remove");
 		buttonRemove.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent aE) {
 				List<String> selectedValues = list.getSelectedValuesList();
 				String productName = fieldProductName.getText().trim();
 				if (!selectedValues.isEmpty()) {
