@@ -267,7 +267,7 @@ public class GUI {
 
 		JButton buttonClearBasket = new JButton("Clear Basket");
 		buttonClearBasket.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent aE) {
 				shoppingBasket.clearBasket();
 				updateGUI();
 			}
