@@ -195,7 +195,7 @@ public class GUI {
 				String productName = fieldProductName.getText().trim();
 				if (!selectedValues.isEmpty()) {
 					for (String selectedValue : selectedValues) {
-						shoppingBasket.removeProduct(selectedValue.split(" ")[0]);
+						shoppingBasket.removeProduct(selectedValue.substring(0, 20).trim());
 					}
 					updateGUI();
 				} else if (!productName.equals("")) {
@@ -223,7 +223,7 @@ public class GUI {
 				if (selectedValues.isEmpty()) {
 					JOptionPane.showMessageDialog(frame, "Please select a product from the Basket.");
 				} else if (selectedValues.size() == 1) {
-					OrderItem orderItem = shoppingBasket.getOrderItemByProductName(selectedValues.get(0).split(" ")[0]);
+					OrderItem orderItem = shoppingBasket.getOrderItemByProductName(selectedValues.get(0).substring(0, 20).trim());
 					JLabel labelEditLatestPrice = new JLabel("Latest Price");
 					labelEditLatestPrice.setFont(STANDARD_FONT);
 					JTextField fieldEditLatestPrice = new JTextField(String.format("%.2f", orderItem.getLatestPrice()));
